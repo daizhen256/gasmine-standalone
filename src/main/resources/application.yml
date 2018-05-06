@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jeesite
+    username: root
+    password: 19880406
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      max-active: 20 
+      max-idle: 8
+      min-idle: 8
+      initial-size: 10
