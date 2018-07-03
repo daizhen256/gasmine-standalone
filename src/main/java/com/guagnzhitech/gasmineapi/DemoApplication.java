@@ -1,10 +1,7 @@
-package demo;
+package com.guagnzhitech.gasmineapi;
 
-import demo.model.Authority;
-import demo.model.AuthorityRepository;
-import demo.model.User;
-import demo.model.UserRepository;
-import demo.support.PassUtil;
+import javax.persistence.EntityManagerFactory;
+
 import org.hibernate.SessionFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +10,11 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
-import javax.persistence.EntityManagerFactory;
+import com.guagnzhitech.gasmineapi.mapper.AuthorityMapper;
+import com.guagnzhitech.gasmineapi.mapper.UserMapper;
+import com.guagnzhitech.gasmineapi.model.Authority;
+import com.guagnzhitech.gasmineapi.model.User;
+import com.guagnzhitech.gasmineapi.support.PassUtil;
 
 @SpringBootApplication
 public class DemoApplication {
@@ -21,8 +22,8 @@ public class DemoApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context =
                 SpringApplication.run(DemoApplication.class, args);
-        UserRepository userRepository = context.getBean(UserRepository.class);
-        AuthorityRepository authorityRepository = context.getBean(AuthorityRepository.class);
+        UserMapper userRepository = context.getBean(UserMapper.class);
+        AuthorityMapper authorityRepository = context.getBean(AuthorityMapper.class);
 
         Authority adminAuthority = getOrGreateAuthority("ROLE_ADMIN", authorityRepository);
         Authority basicAuthority = getOrGreateAuthority("ROLE_BASIC", authorityRepository);
@@ -44,7 +45,7 @@ public class DemoApplication {
         user.setPassword(PassUtil.encode(user.getUsername(), user.getPassword()));
     }
 
-    private static Authority getOrGreateAuthority(String authorityText, AuthorityRepository repository) {
+    private static Authority getOrGreateAuthority(String authorityText, AuthorityMapper repository) {
         Authority authority = repository.findByAuthority(authorityText);
         if (authority == null) {
             authority = new Authority(authorityText);

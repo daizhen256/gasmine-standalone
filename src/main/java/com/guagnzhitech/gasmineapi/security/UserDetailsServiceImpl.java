@@ -1,7 +1,7 @@
-package demo.security;
+package com.guagnzhitech.gasmineapi.security;
 
-import demo.model.User;
-import demo.model.UserRepository;
+import java.io.Serializable;
+
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,13 +10,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.Serializable;
+import com.guagnzhitech.gasmineapi.mapper.UserMapper;
+import com.guagnzhitech.gasmineapi.model.User;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService, Serializable {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserMapper userRepository;
 
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

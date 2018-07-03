@@ -1,4 +1,4 @@
-package demo.support;
+package com.guagnzhitech.gasmineapi.support;
 
 import com.jayway.jsonpath.JsonPath;
 import org.apache.commons.io.IOUtils;

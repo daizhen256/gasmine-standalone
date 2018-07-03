@@ -1,4 +1,4 @@
-package demo.support;
+package com.guagnzhitech.gasmineapi.support;
 
 import javax.persistence.*;
 

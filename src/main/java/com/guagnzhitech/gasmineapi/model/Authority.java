@@ -1,7 +1,8 @@
-package demo.model;
+package com.guagnzhitech.gasmineapi.model;
 
-import demo.support.BaseModel;
 import org.springframework.security.core.GrantedAuthority;
+
+import com.guagnzhitech.gasmineapi.support.BaseModel;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

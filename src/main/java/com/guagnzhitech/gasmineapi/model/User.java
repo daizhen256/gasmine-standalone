@@ -1,7 +1,8 @@
-package demo.model;
+package com.guagnzhitech.gasmineapi.model;
 
-import demo.support.BaseModel;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.guagnzhitech.gasmineapi.support.BaseModel;
 
 import javax.persistence.*;
 import java.util.HashSet;

@@ -1,9 +1,9 @@
-package demo.support;
-
-import demo.model.User;
+package com.guagnzhitech.gasmineapi.support;
 
 import java.security.MessageDigest;
 import java.util.Objects;
+
+import com.guagnzhitech.gasmineapi.model.User;
 
 public abstract class PassUtil {
 
