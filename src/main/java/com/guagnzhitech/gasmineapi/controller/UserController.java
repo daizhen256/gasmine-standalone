@@ -1,8 +1,5 @@
-package demo.action;
+package com.guagnzhitech.gasmineapi.controller;
 
-import demo.model.User;
-import demo.model.UserRepository;
-import demo.support.JsonArg;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +9,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.guagnzhitech.gasmineapi.mapper.UserMapper;
+import com.guagnzhitech.gasmineapi.model.User;
+import com.guagnzhitech.gasmineapi.support.JsonArg;
+
 @RestController
 public class UserController extends BaseController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserMapper userMapper;
 
     @GetMapping(value = "/api/admin/users", produces = MEDIA_TYPE)
     public String listAdminUser() {
         JSONArray array = new JSONArray();
-        userRepository.findAll().forEach(user -> {
+        userMapper.findAll().forEach(user -> {
             JSONObject object = new JSONObject();
             object.put("id", user.getId());
             object.put("username", user.getUsername());
@@ -36,11 +37,11 @@ public class UserController extends BaseController {
     public String saveAdminUser(
             @JsonArg("$.username") String username,
             @JsonArg("$.password") String password) {
-        if (userRepository.findByUsername(username) != null) {
+        if (userMapper.findByUsername(username) != null) {
             return errorMessage("Username already exists");
         }
         User user = new User(username, password);
-        userRepository.save(user);
+        userMapper.save(user);
         JSONObject object = new JSONObject();
         object.put("id", user.getId());
         object.put("username", user.getUsername());
@@ -55,7 +56,7 @@ public class UserController extends BaseController {
             @JsonArg("$.username") String username,
             @JsonArg("$.password") String password,
             @JsonArg("$.enabled") boolean enabled) {
-        User user = userRepository.getOne(id);
+        User user = userMapper.getOne(id);
         user.setUsername(username);
         user.setEnabled(enabled);
         if (password != null && !password.isEmpty()) {

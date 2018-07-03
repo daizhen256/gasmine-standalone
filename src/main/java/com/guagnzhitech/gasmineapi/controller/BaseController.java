@@ -1,4 +1,4 @@
-package demo.action;
+package com.guagnzhitech.gasmineapi.controller;
 
 import org.json.JSONObject;
 import org.slf4j.Logger;

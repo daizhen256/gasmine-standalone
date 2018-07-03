@@ -8,5 +8,7 @@ import com.guagnzhitech.gasmineapi.model.Authority;
 public interface AuthorityMapper {
 
     Authority findByAuthority(String authority);
+    
+    int save(Authority authority);
 
 }

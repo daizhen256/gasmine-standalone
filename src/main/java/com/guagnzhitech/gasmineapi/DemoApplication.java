@@ -22,7 +22,7 @@ public class DemoApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context =
                 SpringApplication.run(DemoApplication.class, args);
-        UserMapper userRepository = context.getBean(UserMapper.class);
+        UserMapper userMapper = context.getBean(UserMapper.class);
         AuthorityMapper authorityRepository = context.getBean(AuthorityMapper.class);
 
         Authority adminAuthority = getOrGreateAuthority("ROLE_ADMIN", authorityRepository);
@@ -37,19 +37,19 @@ public class DemoApplication {
         encodePassword(test);
         test.getAuthorities().add(basicAuthority);
 
-        userRepository.save(admin);
-        userRepository.save(test);
+        userMapper.save(admin);
+        userMapper.save(test);
     }
 
     private static void encodePassword(User user) {
         user.setPassword(PassUtil.encode(user.getUsername(), user.getPassword()));
     }
 
-    private static Authority getOrGreateAuthority(String authorityText, AuthorityMapper repository) {
-        Authority authority = repository.findByAuthority(authorityText);
+    private static Authority getOrGreateAuthority(String authorityText, AuthorityMapper authorityMapper) {
+        Authority authority = authorityMapper.findByAuthority(authorityText);
         if (authority == null) {
             authority = new Authority(authorityText);
-            repository.save(authority);
+            authorityMapper.save(authority);
         }
         return authority;
     }

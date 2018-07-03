@@ -1,20 +1,21 @@
-package demo.config;
+package com.guagnzhitech.gasmineapi.config;
 
-import demo.support.JsonArgumentResolver;
+import java.util.Collections;
+import java.util.List;
+
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.support.OpenSessionInViewFilter;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
-import java.util.Collections;
-import java.util.List;
+import com.guagnzhitech.gasmineapi.support.JsonArgumentResolver;
 
 @EnableWebMvc
 @Configuration
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+public class WebMvcConfig extends WebMvcConfigurationSupport {
 
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(new JsonArgumentResolver());

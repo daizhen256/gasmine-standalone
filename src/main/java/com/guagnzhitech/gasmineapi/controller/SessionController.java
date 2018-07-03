@@ -1,4 +1,4 @@
-package demo.action;
+package com.guagnzhitech.gasmineapi.controller;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
