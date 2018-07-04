@@ -1,11 +1,11 @@
-package com.guagnzhitech.gasmineapi.model;
-
-import org.springframework.security.core.GrantedAuthority;
-
-import com.guagnzhitech.gasmineapi.support.BaseModel;
+package com.guangzhitech.gasmineapi.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
+import org.springframework.security.core.GrantedAuthority;
+
+import com.guangzhitech.gasmineapi.support.BaseModel;
 
 @Entity
 public class Authority extends BaseModel implements GrantedAuthority {

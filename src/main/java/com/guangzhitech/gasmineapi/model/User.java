@@ -1,12 +1,17 @@
-package com.guagnzhitech.gasmineapi.model;
+package com.guangzhitech.gasmineapi.model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.guagnzhitech.gasmineapi.support.BaseModel;
-
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import com.guangzhitech.gasmineapi.support.BaseModel;
 
 @Entity
 public class User extends BaseModel implements UserDetails {

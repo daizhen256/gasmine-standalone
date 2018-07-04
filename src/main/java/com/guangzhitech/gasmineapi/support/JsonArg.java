@@ -1,4 +1,4 @@
-package com.guagnzhitech.gasmineapi.support;
+package com.guangzhitech.gasmineapi.support;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

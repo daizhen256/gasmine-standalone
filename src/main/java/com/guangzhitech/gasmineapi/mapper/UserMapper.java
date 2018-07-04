@@ -1,10 +1,10 @@
-package com.guagnzhitech.gasmineapi.mapper;
+package com.guangzhitech.gasmineapi.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.guagnzhitech.gasmineapi.model.User;
+import com.guangzhitech.gasmineapi.model.User;
 
 @Mapper
 public interface UserMapper {

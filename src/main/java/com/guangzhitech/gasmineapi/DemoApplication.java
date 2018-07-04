@@ -1,8 +1,9 @@
-package com.guagnzhitech.gasmineapi;
+package com.guangzhitech.gasmineapi;
 
 import javax.persistence.EntityManagerFactory;
 
 import org.hibernate.SessionFactory;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -10,13 +11,14 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
-import com.guagnzhitech.gasmineapi.mapper.AuthorityMapper;
-import com.guagnzhitech.gasmineapi.mapper.UserMapper;
-import com.guagnzhitech.gasmineapi.model.Authority;
-import com.guagnzhitech.gasmineapi.model.User;
-import com.guagnzhitech.gasmineapi.support.PassUtil;
+import com.guangzhitech.gasmineapi.mapper.AuthorityMapper;
+import com.guangzhitech.gasmineapi.mapper.UserMapper;
+import com.guangzhitech.gasmineapi.model.Authority;
+import com.guangzhitech.gasmineapi.model.User;
+import com.guangzhitech.gasmineapi.support.PassUtil;
 
 @SpringBootApplication
+@MapperScan(value = "com.guangzhitech.gasmineapi.mapper")
 public class DemoApplication {
 
     public static void main(String[] args) {

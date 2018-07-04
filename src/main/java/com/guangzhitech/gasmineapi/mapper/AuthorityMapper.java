@@ -1,8 +1,8 @@
-package com.guagnzhitech.gasmineapi.mapper;
+package com.guangzhitech.gasmineapi.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.guagnzhitech.gasmineapi.model.Authority;
+import com.guangzhitech.gasmineapi.model.Authority;
 
 @Mapper
 public interface AuthorityMapper {

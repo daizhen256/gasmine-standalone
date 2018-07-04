@@ -1,6 +1,6 @@
-package com.guagnzhitech.gasmineapi.service;
+package com.guangzhitech.gasmineapi.service;
 
-import com.guagnzhitech.gasmineapi.model.User;
+import com.guangzhitech.gasmineapi.model.User;
 
 public interface UserService {
 

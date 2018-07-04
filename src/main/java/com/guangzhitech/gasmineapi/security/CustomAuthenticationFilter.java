@@ -1,4 +1,4 @@
-package com.guagnzhitech.gasmineapi.security;
+package com.guangzhitech.gasmineapi.security;
 
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
