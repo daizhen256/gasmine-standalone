@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guangzhitech.gasmineapi.dao.AuthorityDao">
+    
+	<sql id="authorityColumns">
+		a.id AS "id",
+		a.version AS "version",
+		a.authority AS "authority"
+	</sql>
+	
+	<sql id="authorityJoins">
+	</sql>
+    
+	<select id="get" resultType="Authority">
+		SELECT 
+			<include refid="authorityColumns"/>
+		FROM authority a
+		<include refid="authorityJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findByAuthority" resultType="Authority">
+		SELECT 
+			<include refid="authorityColumns"/>
+		FROM authority a
+		<include refid="authorityJoins"/>
+		WHERE a.authority = #{authority}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO bkm_match_info(
+			id,
+			version,
+			authority
+		) VALUES (
+			#{id},
+			#{version},
+			#{authority}
+		)
+	</insert>
+	
+</mapper>

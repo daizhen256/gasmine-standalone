@@ -2,18 +2,18 @@ package com.guangzhitech.gasmineapi.service.impl;
 
 import javax.annotation.Resource;
 
-import com.guangzhitech.gasmineapi.mapper.UserMapper;
+import com.guangzhitech.gasmineapi.dao.UserDao;
 import com.guangzhitech.gasmineapi.model.User;
 import com.guangzhitech.gasmineapi.service.UserService;
 
 public class UserServiceImpl implements UserService {
 
 	@Resource
-    private UserMapper mapper;
+    private UserDao mapper;
 
     @Override
     public User gYeMian(User u) {
-        User user = mapper.findByUsername(u.getUsername());
+        User user = mapper.getByLoginName(u);
         return user;
     }
 

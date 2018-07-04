@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.guangzhitech.gasmineapi.mapper.UserMapper;
+import com.guangzhitech.gasmineapi.dao.UserDao;
 import com.guangzhitech.gasmineapi.model.User;
 import com.guangzhitech.gasmineapi.support.JsonArg;
 
@@ -17,7 +17,7 @@ import com.guangzhitech.gasmineapi.support.JsonArg;
 public class UserController extends BaseController {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserDao userMapper;
 
     @GetMapping(value = "/api/admin/users", produces = MEDIA_TYPE)
     public String listAdminUser() {
@@ -37,11 +37,13 @@ public class UserController extends BaseController {
     public String saveAdminUser(
             @JsonArg("$.username") String username,
             @JsonArg("$.password") String password) {
-        if (userMapper.findByUsername(username) != null) {
+    	User user = new User();
+    	user.setUsername(username);
+        if (userMapper.getByLoginName(user) != null) {
             return errorMessage("Username already exists");
         }
-        User user = new User(username, password);
-        userMapper.save(user);
+        user = new User(username, password);
+        userMapper.insert(user);
         JSONObject object = new JSONObject();
         object.put("id", user.getId());
         object.put("username", user.getUsername());
@@ -56,7 +58,7 @@ public class UserController extends BaseController {
             @JsonArg("$.username") String username,
             @JsonArg("$.password") String password,
             @JsonArg("$.enabled") boolean enabled) {
-        User user = userMapper.getOne(id);
+        User user = userMapper.get(id);
         user.setUsername(username);
         user.setEnabled(enabled);
         if (password != null && !password.isEmpty()) {

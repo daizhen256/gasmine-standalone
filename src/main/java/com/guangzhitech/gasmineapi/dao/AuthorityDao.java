@@ -1,14 +1,14 @@
-package com.guangzhitech.gasmineapi.mapper;
+package com.guangzhitech.gasmineapi.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
 import com.guangzhitech.gasmineapi.model.Authority;
 
 @Mapper
-public interface AuthorityMapper {
+public interface AuthorityDao {
 
     Authority findByAuthority(String authority);
     
-    int save(Authority authority);
+    int insert(Authority authority);
 
 }
