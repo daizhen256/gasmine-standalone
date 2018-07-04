@@ -1,4 +1,4 @@
-package com.guagnzhitech.gasmineapi.controller;
+package com.guangzhitech.gasmineapi.controller;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.guagnzhitech.gasmineapi.mapper.UserMapper;
-import com.guagnzhitech.gasmineapi.model.User;
-import com.guagnzhitech.gasmineapi.support.JsonArg;
+import com.guangzhitech.gasmineapi.mapper.UserMapper;
+import com.guangzhitech.gasmineapi.model.User;
+import com.guangzhitech.gasmineapi.support.JsonArg;
 
 @RestController
 public class UserController extends BaseController {

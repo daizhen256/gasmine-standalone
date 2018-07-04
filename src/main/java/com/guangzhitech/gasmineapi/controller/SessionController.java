@@ -1,4 +1,4 @@
-package com.guagnzhitech.gasmineapi.controller;
+package com.guangzhitech.gasmineapi.controller;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -1,14 +1,14 @@
-package com.guagnzhitech.gasmineapi.service.impl;
+package com.guangzhitech.gasmineapi.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 
-import com.guagnzhitech.gasmineapi.mapper.UserMapper;
-import com.guagnzhitech.gasmineapi.model.User;
-import com.guagnzhitech.gasmineapi.service.UserService;
+import com.guangzhitech.gasmineapi.mapper.UserMapper;
+import com.guangzhitech.gasmineapi.model.User;
+import com.guangzhitech.gasmineapi.service.UserService;
 
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+	@Resource
     private UserMapper mapper;
 
     @Override

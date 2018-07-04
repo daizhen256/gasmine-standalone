@@ -1,4 +1,4 @@
-package com.guagnzhitech.gasmineapi.config;
+package com.guangzhitech.gasmineapi.config;
 
 import java.util.Collections;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
-import com.guagnzhitech.gasmineapi.support.JsonArgumentResolver;
+import com.guangzhitech.gasmineapi.support.JsonArgumentResolver;
 
 @EnableWebMvc
 @Configuration

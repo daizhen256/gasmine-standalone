@@ -1,4 +1,4 @@
-package com.guagnzhitech.gasmineapi.config;
+package com.guangzhitech.gasmineapi.config;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -38,9 +38,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 
 import com.allanditzel.springframework.security.web.csrf.CsrfTokenResponseHeaderBindingFilter;
-import com.guagnzhitech.gasmineapi.controller.BaseController;
-import com.guagnzhitech.gasmineapi.controller.SessionController;
-import com.guagnzhitech.gasmineapi.security.CustomAuthenticationFilter;
+import com.guangzhitech.gasmineapi.controller.BaseController;
+import com.guangzhitech.gasmineapi.controller.SessionController;
+import com.guangzhitech.gasmineapi.security.CustomAuthenticationFilter;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
